@@ -1,6 +1,5 @@
 from app import app
 from flask import render_template, flash, redirect
-from forms import LoginForm
 
 
 @app.route('/')
@@ -30,11 +29,3 @@ def index() -> str:
                            posts=posts,
                            menu=menu)
 
-
-@app.route('/login', methods=['GET', 'POST'])
-def login() -> str:
-    return render_template(
-        'login.html',
-        title='Sign in',
-        form=LoginForm()
-    )
