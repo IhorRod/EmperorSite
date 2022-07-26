@@ -17,10 +17,18 @@ def index() -> str:
             'body': 'The Avengers movie was so cool!'
         }
     ]
+    menu = {
+        'Головна сторінка': '/',
+        'Лібраріум': '#',
+        'Імперський вісник': '#',
+        'Контакти': '#',
+        'Допомога проекту': '#'
+    }
     return render_template("index.html",
                            title='Home',
                            user=user,
-                           posts=posts)
+                           posts=posts,
+                           menu=menu)
 
 
 @app.route('/login', methods=['GET', 'POST'])
